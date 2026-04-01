@@ -16,9 +16,9 @@ Quantitative/
     └── README.md
 ```
 
-## 依賴環境
+## 環境
 
-請確保已安裝以下 Python 庫：
+已安裝以下 Python library：
 - `pandas`
 - `numpy`
 - `ccxt`
@@ -45,23 +45,18 @@ Quantitative/
 
 ## 執行方式
 
-您可以從 `Quantitative` 父目錄執行任何策略腳本：
+從 `Quantitative` 父目錄執行任何策略腳本：
 
 ```bash
-# 在 C:\Quantitative 目錄下執行
 python .\strategy_NTUFC\strategy_1.py
 python .\strategy_NTUFC\strategy_2.py
 python .\strategy_NTUFC\strategy_3.py
 ```
 
-## 產出結果
+## 產出績效結果
 
-執行完成後，腳本會自動在 `strategy_NTUFC` 目錄下生成對應的結果圖片：
+執行完成後，會自動在 `strategy_NTUFC` 目錄下生成對應的結果圖片：
 - `strategy_1_result.png`
 - `strategy_2_result.png`
 - `strategy_3_result.png`
 
-圖片包含：
-1. **Equity Curve**: 策略累計收益曲線。
-2. **Drawdown**: 歷史回撤圖。
-3. **Metrics Table**: 包含 Sharpe Ratio, Max Drawdown, Annual Return 等詳細績效指標。
