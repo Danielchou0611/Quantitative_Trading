@@ -9,10 +9,10 @@
 ```text
 Quantitative/
 ├── phandas/             # phandas 回測框架核心套件
-└── strategy_NTUFC/      # 本專案目錄
-    ├── strategy_1.py    # 策略 1：成交量排名策略
-    ├── strategy_2.py    # 策略 2：VWAP/Low 標準化加總策略
-    ├── strategy_3.py    # 策略 3：收益中位數均值回歸策略
+└── strategy_NTUFC/      # NTUFC發表Alpha目錄
+    ├── strategy_1.py    # Alpha 1：成交量排名策略
+    ├── strategy_2.py    # Alpha 2：VWAP/Low 標準化加總策略
+    ├── strategy_3.py    # Alpha 3：收益中位數均值回歸策略
     └── README.md
 ```
 
@@ -32,16 +32,19 @@ Quantitative/
 - **公式**: `ts_mean(normalize(ts_rank(volume, 512)), 512)`
 - **邏輯**: 捕捉成交量的相對變化，透過 512 週期的滾動排名與標準化，尋找交易量異常帶來的動能機會。
 - **週期**: 1h
+- **回測週期**: start at 2025-01-01
 
 ### 2. Strategy 2: VWAP/Low Scale
 - **公式**: `ts_sum(rank(ts_scale(vwap, 512) + ts_scale(low, 512)), 72)`
 - **邏輯**: 結合 VWAP（成交量加權平均價）與最低價的標準化數值，進行橫截面排名後加總，旨在捕捉價格與價量的協同效應。
 - **週期**: 1h
+- **回測週期**: start at 2025-01-01
 
 ### 3. Strategy 3: Median-Mean Reversion
 - **公式**: `ts_mean(normalize(ts_median(close/open - 1, 300)), 500)`
 - **邏輯**: 使用日內漲跌幅的中位數進行長週期平滑，透過標準化尋找市場超漲或超跌的均值回歸機會。
 - **週期**: 1h
+- **回測週期**: start at 2025-01-01
 
 ## 執行方式
 
